@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Fonts/MorningRainbow.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/ControlsScreen.gd" type="Script" id=2]
+[ext_resource path="res://Images/keyboard.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 33
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=7]
+Button/styles/disabled = SubResource( 2 )
+Button/styles/focus = SubResource( 3 )
+Button/styles/hover = SubResource( 4 )
+Button/styles/normal = SubResource( 5 )
+Button/styles/pressed = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 33
+font_data = ExtResource( 1 )
+
+[node name="ControlsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -376.0
+margin_top = -142.5
+margin_right = 376.0
+margin_bottom = 142.5
+custom_fonts/font = SubResource( 1 )
+text = "     Controle do jogo
+
+Andar para esquerda:
+
+Andar para direita:
+
+Pular:
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="returnBtn" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -46.0
+margin_top = 196.0
+margin_right = 57.0
+margin_bottom = 229.0
+theme = SubResource( 7 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.337255, 0.337255, 0.337255, 1 )
+custom_colors/font_color_pressed = Color( 0.337255, 0.337255, 0.337255, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="key-left" type="Sprite" parent="."]
+position = Vector2( 715, 247 )
+rotation = -1.56679
+scale = Vector2( 0.61954, 0.663596 )
+texture = ExtResource( 3 )
+
+[node name="key-right" type="Sprite" parent="."]
+position = Vector2( 705, 318 )
+rotation = -4.71238
+scale = Vector2( 0.596265, 0.679159 )
+texture = ExtResource( 3 )
+
+[node name="key-up" type="Sprite" parent="."]
+position = Vector2( 601, 389 )
+rotation = -6.28318
+scale = Vector2( 0.596265, 0.679159 )
+texture = ExtResource( 3 )
+
+[connection signal="pressed" from="returnBtn" to="." method="_on_returnBtn_pressed"]
