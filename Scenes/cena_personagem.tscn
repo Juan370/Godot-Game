@@ -1,0 +1,168 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Images/persoangem_editado.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Personagem.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29, 29 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Personagem:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 32, 44, 58, 58 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "andando"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Personagem:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 32, 44, 58, 58 ), Rect2( 122, 44, 58, 58 ), Rect2( 210, 44, 58, 58 ), Rect2( 288, 42, 58, 58 ), Rect2( 365, 42, 58, 58 ), Rect2( 441, 42, 58, 58 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "empalado"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Personagem:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 655, 58, 63 ), Rect2( 67, 655, 58, 63 ), Rect2( 137, 655, 58, 63 ), Rect2( 207, 655, 58, 63 ), Rect2( 273, 631, 58, 87 ), Rect2( 342, 622, 58, 96 ), Rect2( 413, 627, 58, 89 ), Rect2( 479, 612, 64, 107 ), Rect2( 561, 612, 67, 106 ), Rect2( 638, 611, 68, 107 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "morrendo"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Personagem:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 28, 523, 58, 59 ), Rect2( 97, 513, 76, 76 ), Rect2( 187, 519, 70, 70 ), Rect2( 275, 512, 60, 61 ), Rect2( 341, 502, 78, 71 ), Rect2( 452, 497, 73, 70 ), Rect2( 547, 530, 65, 43 ), Rect2( 642, 530, 56, 52 ), Rect2( 731, 550, 28, 25 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "parado"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Personagem:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 32, 44, 58, 58 ), Rect2( 441, 42, 58, 58 ), Rect2( 32, 44, 58, 58 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "pulando"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Personagem:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 26, 174, 59, 58 ), Rect2( 93, 161, 81, 81 ), Rect2( 182, 165, 78, 78 ), Rect2( 271, 175, 64, 63 ), Rect2( 339, 165, 80, 80 ), Rect2( 425, 169, 76, 75 ), Rect2( 507, 165, 73, 73 ), Rect2( 583, 160, 77, 77 ), Rect2( 668, 161, 70, 70 ), Rect2( 745, 146, 78, 78 ), Rect2( 833, 160, 59, 58 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "sangrando"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite_Personagem:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 20, 406, 58, 58 ), Rect2( 107, 403, 64, 64 ), Rect2( 194, 402, 66, 66 ), Rect2( 274, 402, 62, 62 ), Rect2( 351, 402, 62, 62 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Personagem" type="KinematicBody2D" parent="."]
+position = Vector2( 493, 284 )
+collision_mask = 14
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite_Personagem" type="Sprite" parent="Personagem"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 44, 58, 58 )
+
+[node name="Collision_Personagem" type="CollisionShape2D" parent="Personagem"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem"]
+anims/RESET = SubResource( 2 )
+anims/andando = SubResource( 3 )
+anims/empalado = SubResource( 4 )
+anims/morrendo = SubResource( 5 )
+anims/parado = SubResource( 6 )
+anims/pulando = SubResource( 7 )
+anims/sangrando = SubResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="Personagem"]
+position = Vector2( 20, 15 )
+rotating = true
+current = true
+limit_left = -20
+editor_draw_screen = false
+
+[node name="raycasts" type="Node2D" parent="Personagem"]
+position = Vector2( -492, -276 )
+
+[node name="raycast" type="RayCast2D" parent="Personagem/raycasts"]
+position = Vector2( 469, 302 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+collision_mask = 8
+
+[node name="raycasts2" type="RayCast2D" parent="Personagem/raycasts"]
+position = Vector2( 518, 303 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+collision_mask = 8
